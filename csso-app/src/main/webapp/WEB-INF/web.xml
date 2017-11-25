@@ -32,25 +32,25 @@
 		<init-param>
 			<description>csso服务器主机地址</description>
 			<param-name>cssoServerHost</param-name>
-			<param-value>http://10.1.84.166:8080/csso-web/</param-value>
+			<param-value>http://localhost:8080/csso-web/</param-value>
 		</init-param>
 		
 		<init-param>
 			<description>csso服务器登录地址</description>
 			<param-name>cssoServerLoginUrl</param-name>
-			<param-value>http://10.1.84.166:8080/csso-web/login.do</param-value>
+			<param-value>http://localhost:8080/csso-web/login.do</param-value>
 		</init-param>
 		
 		<init-param>
 			<description>csso服务器获取应用秘钥信息的URL地址</description>
 			<param-name>cssoServerFetchKeyUrl</param-name>
-			<param-value>http://10.1.84.166:8080/csso-web/fetchApp.do</param-value>
+			<param-value>http://localhost:8080/csso-web/fetchApp.do</param-value>
 		</init-param>
 		
 		<init-param>
 			<description>csso服务器获取Token key的URL地址</description>
 			<param-name>cssoServerFetchTokenKeyUrl</param-name>
-			<param-value>http://10.1.84.166:8080/csso-web/fetchKey.do</param-value>
+			<param-value>http://localhost:8080/csso-web/fetchKey.do</param-value>
 		</init-param>
 		
 		<init-param>
