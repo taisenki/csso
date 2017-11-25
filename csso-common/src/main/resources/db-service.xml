@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- the hikarids configuration can be embedded within your own application's.
+Anything outside the "hikarids" tag is ignored. -->
+<server>
+  <hikarids>
+    <alias>sddb</alias>
+    <driver-url>jdbc:oracle:thin:@10.1.50.205:1521:orcl</driver-url>
+    <driver-properties>
+      <property name="connectionTimeout" value="30000"/>
+      <property name="connectionTestQuery" value="select dummy from dual"/>
+      <property name="idleTimeout" value="600000"/>
+      <property name="maxLifetime" value="1800000"/>
+      <property name="maximumPoolSize" value="50"/>
+      <property name="minimumIdle" value="5"/>
+      <property name="dataSourceProperties">
+            <props>
+                <prop key="user">sddb</prop>
+                <prop key="password">sddb</prop>
+                <prop key="cachePrepStmts">true</prop>
+                <prop key="prepStmtCacheSize">250</prop>
+                <prop key="prepStmtCacheSqlLimit">2048</prop>
+            </props>
+       </property>
+    </driver-properties>
+	<isdecode>false</isdecode>
+  </hikarids>
+  <hikarids>
+    <alias>mybatis</alias>
+    <driver-url>jdbc:oracle:thin:@10.1.50.204:1521:orcl</driver-url>
+    <driver-properties>
+      <property name="connectionTimeout" value="30000"/>
+      <property name="connectionTestQuery" value="select dummy from dual"/>
+      <property name="idleTimeout" value="600000"/>
+      <property name="maxLifetime" value="1800000"/>
+      <property name="maximumPoolSize" value="50"/>
+      <property name="minimumIdle" value="5"/>
+      <property name="dataSourceProperties">
+            <props>
+                <prop key="user">uisp</prop>
+                <prop key="password">uisp</prop>
+                <prop key="cachePrepStmts">true</prop>
+                <prop key="prepStmtCacheSize">250</prop>
+                <prop key="prepStmtCacheSqlLimit">2048</prop>
+            </props>
+       </property>
+    </driver-properties>
+	<isdecode>false</isdecode>
+  </hikarids>
+</server>

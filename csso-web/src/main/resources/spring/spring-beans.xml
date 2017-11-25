@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- 组合凭据解析器对象。 -->
+	<bean id="credentialResolver" class="org.taisenki.csso.web.resolver.CompositeCredentialResolver">
+		<property name="usernamePasswordCredentialResolver">
+			<bean class="org.taisenki.csso.web.resolver.UsernamePasswordCredentialResolver"></bean>
+		</property>
+		<property name="encryCredentialResolver">
+			<bean class="org.taisenki.csso.web.resolver.EncryCredentialResolver"></bean>
+		</property>
+	</bean>
+	
+	<bean id="appService" class="org.taisenki.csso.core.app.AppServiceImpl"></bean>
+	
+	<bean id="keyManager" class="org.taisenki.csso.core.key.DefaultKeyManagerImpl"></bean>
+	
+	<bean id="keyService" class="org.taisenki.csso.core.key.KeyServiceImpl" autowire="byName"></bean>
+	
+	<!-- 默认的用户登录状态存储器服务。 -->
+	<bean id="userLoggedStatusStore" class="org.taisenki.csso.core.authentication.status.DefaultUserLoggedStatusStore"></bean>
+	
+	<!-- 登出app服务。 -->
+	<bean id="logoutAppService" class="org.taisenki.csso.core.service.LogoutAppServiceImpl" autowire="byName"></bean>
+	
+	
+	<!-- CSSO中心接口服务 -->
+	<bean id="CSSOService" class="org.taisenki.csso.core.service.CssoServiceImpl" autowire="byName"></bean>
+	
+	<bean id="loginResultToView" class="org.taisenki.csso.web.view.DefaultLoginResultToView"></bean>
+	
+	<bean id="encryCredentialManager" class="org.taisenki.csso.core.authentication.EncryCredentialManagerImpl" autowire="byName"></bean>
+
+	<!-- 认证管理器对象。 -->
+	<bean id="authenticationManager" class="org.taisenki.csso.core.authentication.AuthenticationManagerImpl">
+		<property name="authenticationHandlers">
+			<list>
+				<bean class="org.taisenki.csso.core.authentication.handler.auth.SimpleTestUsernamePasswordAuthenticationHandler"></bean>
+				<bean class="org.taisenki.csso.core.authentication.handler.auth.EncryCredentialAuthenticationHandler" autowire="byName"/>
+			</list>
+		</property>
+		
+		<property name="credentialToPrincipalResolvers">
+			<list>
+				<bean class="org.taisenki.csso.core.authentication.resolver.UsernamePasswordCredentialToPrincipalResolver"></bean>
+				<bean class="org.taisenki.csso.core.authentication.resolver.EncryCredentialToPrincipalResolver" autowire="byName"></bean>
+			</list>
+		</property>
+		
+		<property name="authenticationPostHandler">
+			<bean class="org.taisenki.csso.core.authentication.handler.post.DefaultAuthenticationPostHandler" autowire="byName"></bean>
+		</property>
+	</bean>
+
+</beans>

@@ -1,0 +1,8 @@
+.settings/
+csso-app/target/
+*.project
+*.classpath
+csso-common/target/
+csso-core/target/
+csso-java-client/target/
+csso-web/target/

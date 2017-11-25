@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+	<display-name>csso-app</display-name>
+	<description>
+		本项目是csso的客户端应用示例工程，演示了如何继承csso单点登录服务。
+	</description>
+
+	<!-- 配置Spring MVC -->
+	<servlet>
+		<servlet-name>springmvc</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:spring/*.xml</param-value>
+		</init-param>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>springmvc</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- csso集成的过滤器，必须集成该过滤器，放在最前面的位置。 -->
+	<filter>
+		<filter-name>CssoClientFilter</filter-name>
+		<filter-class>org.taisenki.csso.client.web.filters.CssoClientFilter</filter-class>
+		<init-param>
+			<description>csso服务器主机地址</description>
+			<param-name>cssoServerHost</param-name>
+			<param-value>http://10.1.84.166:8080/csso-web/</param-value>
+		</init-param>
+		
+		<init-param>
+			<description>csso服务器登录地址</description>
+			<param-name>cssoServerLoginUrl</param-name>
+			<param-value>http://10.1.84.166:8080/csso-web/login.do</param-value>
+		</init-param>
+		
+		<init-param>
+			<description>csso服务器获取应用秘钥信息的URL地址</description>
+			<param-name>cssoServerFetchKeyUrl</param-name>
+			<param-value>http://10.1.84.166:8080/csso-web/fetchApp.do</param-value>
+		</init-param>
+		
+		<init-param>
+			<description>csso服务器获取Token key的URL地址</description>
+			<param-name>cssoServerFetchTokenKeyUrl</param-name>
+			<param-value>http://10.1.84.166:8080/csso-web/fetchKey.do</param-value>
+		</init-param>
+		
+		<init-param>
+			<description>本应用在csso服务器上的应用ID值</description>
+			<param-name>cssoClientAppId</param-name>
+			<param-value>1001</param-value>
+		</init-param>
+		
+		<init-param>
+			<description>登录本应用处理器类</description>
+			<param-name>appClientLoginHandlerClass</param-name>
+			<param-value>org.taisenki.csso.app.custom.CssoAppClientLoginHandlerImpl</param-value>
+		</init-param>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>CssoClientFilter</filter-name>
+		<url-pattern>/home.do</url-pattern>
+	</filter-mapping>
+	
+	<!-- csso处理本地应用登出逻辑的过滤器。 被 csso服务器调用-->
+	<filter>
+		<filter-name>CssoClientLogoutFilter</filter-name>
+		<filter-class>org.taisenki.csso.client.web.filters.CssoClientLogoutFilter</filter-class>
+		
+		<init-param>
+			<description>登出本应用处理器类</description>
+			<param-name>appClientLogoutHandler</param-name>
+			<param-value>org.taisenki.csso.app.custom.CssoAppClientLogoutHandlerImpl</param-value>
+		</init-param>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>CssoClientLogoutFilter</filter-name>
+		<url-pattern>/logout.do</url-pattern>
+	</filter-mapping>
+	
+	
+	<welcome-file-list>
+		<welcome-file>/index.jsp</welcome-file>
+	</welcome-file-list>
+
+</web-app>
