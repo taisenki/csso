@@ -3,7 +3,7 @@
  * File Name:KeyManager.java 
  * Package Name:org.taisenki.csso.core.key 
  * Date:2017年11月22日下午1:56:58 
- * Copyright (c) 2017, taisenki@dareway.com.cn All Rights Reserved. 
+ * Copyright (c) 2017, taisenki@163.com All Rights Reserved. 
  * 
  */  
   

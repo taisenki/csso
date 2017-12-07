@@ -3,7 +3,7 @@
  * File Name:PairKey.java 
  * Package Name:org.taisenki.csso.core.key 
  * Date:2017年11月24日下午3:36:05 
- * Copyright (c) 2017, taisenki@dareway.com.cn All Rights Reserved. 
+ * Copyright (c) 2017, taisenki@163.com All Rights Reserved. 
  * 
  */  
   

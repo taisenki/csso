@@ -6,7 +6,6 @@ import org.taisenki.csso.core.authentication.Credential;
 
 /**
  * 凭据解析器，从http请求的cookie，参数等值中解析出各种类型的用户凭证，该接口由具体实现类负责具体凭据解析。
- * @author burgess yang
  *
  */
 public interface CredentialResolver {

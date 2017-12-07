@@ -3,7 +3,7 @@
  * File Name:ClientKeyServiceImpl.java 
  * Package Name:com.github.ebnew.csso.client.key 
  * Date:2017年11月17日上午11:38:31 
- * Copyright (c) 2017, taisenki@dareway.com.cn All Rights Reserved. 
+ * Copyright (c) 2017, taisenki@163.com All Rights Reserved. 
  * 
  */  
   

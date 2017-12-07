@@ -3,7 +3,7 @@
  * File Name:CoderTest.java 
  * Package Name:org.taisenki.csso.common.coder 
  * Date:2017年11月20日下午1:35:12 
- * Copyright (c) 2017, taisenki@dareway.com.cn All Rights Reserved. 
+ * Copyright (c) 2017, taisenki@163.com All Rights Reserved. 
  * 
  */  
   

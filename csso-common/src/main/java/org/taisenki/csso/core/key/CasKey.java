@@ -3,7 +3,7 @@
  * File Name:CasKey.java 
  * Package Name:org.taisenki.csso.core.key 
  * Date:2017年11月20日下午3:45:00 
- * Copyright (c) 2017, taisenki@dareway.com.cn All Rights Reserved. 
+ * Copyright (c) 2017, taisenki@163.com All Rights Reserved. 
  * 
  */  
   

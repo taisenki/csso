@@ -3,7 +3,7 @@
  * File Name:SM2Test.java 
  * Package Name:org.taisenki.csso.common.cipher 
  * Date:2017年11月20日下午1:29:20 
- * Copyright (c) 2017, taisenki@dareway.com.cn All Rights Reserved. 
+ * Copyright (c) 2017, taisenki@163.com All Rights Reserved. 
  * 
  */  
   

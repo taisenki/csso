@@ -3,7 +3,7 @@
  * File Name:TimeLimitBag.java 
  * Package Name:org.taisenki.csso.core.thread 
  * Date:2017年11月22日上午11:29:26 
- * Copyright (c) 2017, taisenki@dareway.com.cn All Rights Reserved. 
+ * Copyright (c) 2017, taisenki@163.com All Rights Reserved. 
  * 
  */  
   
