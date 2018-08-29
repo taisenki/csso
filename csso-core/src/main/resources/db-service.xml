@@ -3,8 +3,8 @@
 Anything outside the "hikarids" tag is ignored. -->
 <server>
   <hikarids>
-    <alias>sddb</alias>
-    <driver-url>jdbc:oracle:thin:@10.1.50.205:1521:orcl</driver-url>
+    <alias>testdb</alias>
+    <driver-url>jdbc:oracle:thin:@127.0.0.1:1521:orcl</driver-url>
     <driver-properties>
       <property name="connectionTimeout" value="30000"/>
       <property name="connectionTestQuery" value="select dummy from dual"/>
@@ -14,8 +14,8 @@ Anything outside the "hikarids" tag is ignored. -->
       <property name="minimumIdle" value="5"/>
       <property name="dataSourceProperties">
             <props>
-                <prop key="user">sddb</prop>
-                <prop key="password">sddb</prop>
+                <prop key="user">test</prop>
+                <prop key="password">test</prop>
                 <prop key="cachePrepStmts">true</prop>
                 <prop key="prepStmtCacheSize">250</prop>
                 <prop key="prepStmtCacheSqlLimit">2048</prop>
@@ -36,8 +36,8 @@ Anything outside the "hikarids" tag is ignored. -->
       <property name="minimumIdle" value="5"/>
       <property name="dataSourceProperties">
             <props>
-                <prop key="user">uisp</prop>
-                <prop key="password">uisp</prop>
+                <prop key="user">test</prop>
+                <prop key="password">test</prop>
                 <prop key="cachePrepStmts">true</prop>
                 <prop key="prepStmtCacheSize">250</prop>
                 <prop key="prepStmtCacheSqlLimit">2048</prop>
